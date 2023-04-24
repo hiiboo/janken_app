@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMENJIRO_CALLSIMULATOR</title>
+<html>
+    <head>
+        <title>Button Example</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+    <audio id="myAudio">
+        <source src="./onsei/ninnikuiremasuka (mp3cut.net).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+  <h1>ラーメン二郎 コールシュミレーター</h1> 
+
+    <div class="tensyu">
+        <img src="./dsc04144.jpeg" alt="">
+    </div>
+
+    あなたのボタンを押してね！
+
+    <div class="btn">
+    <button onclick="playSound('./onsei/yasaininniku.mp3'); showPopup('popup1')">基本的な二郎は…</button>
+	<button onclick="playSound('./onsei/yasaimasimaside.mp3'); showPopup('popup2')">健康志向の人には…</button>
+	<button onclick="playSound('./onsei/sukuname.mp3'); showPopup('popup3')">女性や子どもは…</button>
+	<button onclick="playSound('./onsei/ninnikukaramede.mp3'); showPopup('popup4')">パンチが欲しい人は…</button>
+	<button onclick="playSound('./onsei/yasaimountainde.mp3'); showPopup('popup5')">ファーストロッター向け</button>
+	
+    <div id="popup1" class="popup">
+        <img src="./2d127ea8.jpeg" alt="">
+		<h2>野菜ニンニク</h2>
+		<p>一番基本的な二郎を食べたい方はこう唱えれば問題なし！<br>二郎は全然怖くない！恐れずお店に入りましょう！</p>
+        </p>
+		<button onclick="hidePopup('popup1')">Close</button>
+	</div>
+
+	<div id="popup2" class="popup">
+        <img src="./yasaimashi.png" alt="">
+		<h2>野菜マシマシ</h2>
+        <p>健康に気をつかってるあなたにはこれ<br>野菜がたくさん食べれて、いいことづくし！</p>
+		<button onclick="hidePopup('popup2')">Close</button>
+	</div>
+
+	<div id="popup3" class="popup">
+        <img src="./sukuname.png" alt="">
+		<h2>少なめ</h2>
+		<p>女性にとっては嬉しい少なめ！<br>ただでさえ二郎は多いから初心者にはこれがおすすめ！</p>
+		<button onclick="hidePopup('popup3')">Close</button>
+	</div>
+
+	<div id="popup4" class="popup">
+        <img src="./karame.png" alt="">
+		<h2>ニンニクカラメ</h2>
+        <p>とにかく二郎の味を濃く味わいたい人におすすめ<br>パンチが効いててガツンとくるぞ！脳天突き抜け！</p> 
+		<button onclick="hidePopup('popup4')">Close</button>
+	</div>
+
+	<div id="popup5" class="popup">
+        <img src="./mountain.png" alt="">
+		<h2>野菜マウンテン</h2>
+        <p>禁断の呪文、一度唱えれば店主に怒られる可能性大<br>私の友人は「は？」と聞き返されてました。</p> 
+		<button onclick="hidePopup('popup5')">Close</button>
+	</div>
+
+	<audio id="audio"></audio>
+
+
+	<script>
+
+  // ページがロードされたら音を再生する
+  window.addEventListener('load', function () {
+    var audio = document.getElementById("myAudio");
+    audio.play();
+  });
+
+  function playSound(sound) {
+			const audio = document.getElementById('audio');
+			audio.src = sound;
+			audio.play();
+		}
+
+		function showPopup(popupId) {
+			const popup = document.getElementById(popupId);
+			popup.style.display = 'block';
+		}
+
+		function hidePopup(popupId) {
+			const popup = document.getElementById(popupId);
+			popup.style.display = 'none';
+		}
+
+    </script>
+</body>
+</html>
